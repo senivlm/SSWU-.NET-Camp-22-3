@@ -30,7 +30,7 @@ namespace Homework_2_PivniukOlha
             {
                 for(int j = 0; j < m; j++)
                 {
-                    Console.Write(myArray[i,j] + " ");
+                    Console.Write("{0,4}", myArray[i, j]);
                 }
                 Console.WriteLine();
             }            
@@ -61,7 +61,7 @@ namespace Homework_2_PivniukOlha
             {
                 for (int j = 0; j < m; j++)
                 {
-                    Console.Write(myArray[i, j] + " ");
+                    Console.Write("{0,4}", myArray[i, j]);
                 }
                 Console.WriteLine();
             }
@@ -85,10 +85,43 @@ namespace Homework_2_PivniukOlha
             {
                 for (int j = 0; j < m; j++)
                 {
-                    Console.Write(myArray[i, j] + " ");
+                    Console.Write("{0,4}", myArray[i, j]);
                 }
                 Console.WriteLine();
             }
+        }
+        public static void FindTheLongestString(int n, int m)
+        {
+            int[,] myArray = new int[n, m];
+
+            Random random = new Random();
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
+                    myArray[i, j] = random.Next(0,16);
+                    Console.Write("{0,4}", myArray[i, j]);
+                }
+                Console.WriteLine();
+            }
+
+            int lineNum = -1;
+            int maxCount = 0;
+
+            for (int i = 0; i < n; i++)
+            {
+                int count = 0;
+                for (int j = 0; j < m - 1; j++)
+                {
+                    if (myArray[i, j] != myArray[i, j + 1]) continue;
+                    count++;
+                }
+                if (maxCount >= count) continue;
+                maxCount = count;
+                lineNum = i;
+
+            }
+            Console.WriteLine($"The number of the line containing the longest series of identical elements: {lineNum}");
         }
     }
 }

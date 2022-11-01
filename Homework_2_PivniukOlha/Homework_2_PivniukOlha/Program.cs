@@ -21,7 +21,10 @@ namespace Homework_2_PivniukOlha
             Console.WriteLine();           
             MultidimensionalArray.FillMatrixDiagonalSnake(n,m);
             Console.WriteLine();
-            MultidimensionalArray.FillMatrixSpiralSnake(n,m);          
+            MultidimensionalArray.FillMatrixSpiralSnake(n,m);
+
+            Console.WriteLine();
+            MultidimensionalArray.FindTheLongestString(n, m);
         }
     }
 }
