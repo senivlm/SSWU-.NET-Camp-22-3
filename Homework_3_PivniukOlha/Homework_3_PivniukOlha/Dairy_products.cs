@@ -18,9 +18,17 @@ namespace Homework_3_PivniukOlha
         {
             return $"Name of product: {Name}, price: {Price}, Expiration date in days: {ExpirationDateInDays}";
         }
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
-            return Equals(obj as Dairy_products);
+            if (obj == null || obj is not Dairy_products)
+            {
+                return false;
+            }
+            else
+            {
+                Dairy_products other = (Dairy_products)obj;
+                return Name == other.Name;
+            }
         }
         public override int GetHashCode()
         {

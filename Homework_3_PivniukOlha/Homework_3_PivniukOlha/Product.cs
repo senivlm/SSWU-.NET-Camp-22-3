@@ -27,19 +27,17 @@ namespace Homework_3_PivniukOlha
         {
             return $"Name: {Name}, price: {Price}";
         }        
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
-            if (ReferenceEquals(obj, null))
-                return false;
-            if (ReferenceEquals(this, obj))
-                return true;
-            if (obj is Product)
+            if (obj == null || obj is not Product)
             {
-                Product product = (Product)obj;
-                return
-                    (this.Name == product.Name);
+                return false;
             }
-            return false;
+            else
+            {
+                Product other = (Product)obj; 
+                return this.Name == other.Name;
+            }            
         }
         public override int GetHashCode()
         {

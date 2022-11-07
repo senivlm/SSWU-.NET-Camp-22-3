@@ -20,9 +20,17 @@ namespace Homework_3_PivniukOlha
         {
             return $"Name of product: {Name}, price: { Price}, category of products: {Category}, kind of product: {Kind}";
         }
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
-            return Equals(obj as Meat);
+            if (obj == null || obj is not Meat)
+            {
+                return false;
+            }
+            else
+            {
+                Meat other = (Meat)obj;
+                return Name == other.Name;
+            }
         }
         public override int GetHashCode()
         {
