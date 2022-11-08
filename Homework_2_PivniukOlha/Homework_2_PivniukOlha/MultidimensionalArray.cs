@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Homework_2_PivniukOlha
 {
     public class MultidimensionalArray
-    {
+    {//не правильна організація класу. Прохання залишитись для пояснень
         public static void FillMatrixVerticalSnake(int n, int m)
         {                       
             int[,] myArray = new int[n, m]; 
@@ -40,7 +40,7 @@ namespace Homework_2_PivniukOlha
             int[,] myArray = new int[n, m];
             for (int i = 0, v = 0; i < n + m - 1; i++)
             {
-                int r, c;
+                int r, c;//не ініціалізовані змінні
                 if (i % 2 == 1)
                 {
                     r = i < m ? 0 : i - m + 1;
@@ -50,13 +50,13 @@ namespace Homework_2_PivniukOlha
                 {
                     r = i < n ? i : n - 1;
                     c = i < n ? 0 : i - n + 1;
-                }
+                }..
                 while (r < n && r >= 0 && c < m && c >= 0)
                 {
                     myArray[i % 2 == 0 ? r-- : r++, i % 2 == 0 ? c++ : c--] = ++v;
                 }
             }
-
+            // друк і заповнення мають бути різними методами.
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < m; j++)
@@ -67,7 +67,7 @@ namespace Homework_2_PivniukOlha
             }
         }
         public static void FillMatrixSpiralSnake(int n, int m)
-        {
+        {// Алгоритмічно не правильно
             int[,] myArray = new int[n, m];
             int start = 1;
             int k = 0, l = 0, x = n * m + 1;
