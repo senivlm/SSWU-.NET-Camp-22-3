@@ -41,6 +41,7 @@ namespace Homework_3_PivniukOlha
                 new Meat ("Sausage", 90, CategoryProduct.SecondGrade, KindProduct.Pork),         
             };
         }
+        //прив'язка до консолі в модельному класі.
         public void Print()
         {                             
             for (int i = 0; i < _products.Length; i++)
